@@ -63,9 +63,15 @@ export default function Index() {
     >
       {dimension.width > 0 && (
         <>
-          <motion.p variants={opacity} initial="initial" animate="enter">
-            {(loadingPercent - (loadingPercent % 5)).toFixed(0)} %
-          </motion.p>
+          <motion.div variants={opacity} initial="initial" animate="enter" className="absolute z-10 flex flex-col items-end gap-1 font-mono right-[60px] bottom-[30px]">
+            <span className="text-5xl md:text-7xl font-bold tracking-widest uppercase flex items-center text-foreground">
+              {"Rishabh".slice(0, Math.ceil((loadingPercent / 100) * 7))}
+              <span className="animate-pulse">_</span>
+            </span>
+            <span className="text-xl md:text-3xl text-muted-foreground">
+              {(loadingPercent - (loadingPercent % 5)).toFixed(0)}%
+            </span>
+          </motion.div>
           <svg>
             <motion.path
               variants={curve}

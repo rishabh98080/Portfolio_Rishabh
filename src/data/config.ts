@@ -1,5 +1,5 @@
 const config = {
-  title: "Rishabh Kumar | Full-Stack Developer",
+  title: "Rishabh Kumar",
   description: {
     long: "Explore the portfolio of Rishabh Kumar, a full-stack developer specializing in interactive web experiences and innovative projects. Discover my latest work. Let's build something amazing together!",
     short:
@@ -25,9 +25,9 @@ const config = {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://x.com/",
-    linkedin: "https://linkedin.com/in/rishabh-kumar-064409330",
-    instagram: "https://instagram.com/",
+    twitter: "https://x.com/Rishabh78572143",
+    linkedin: "https://www.linkedin.com/in/rishabh-kumar-064409330/",
+    instagram: "https://www.instagram.com/rishabh_pandey51",
     facebook: "https://facebook.com/",
     github: "https://github.com/rishabh98080",
   },
