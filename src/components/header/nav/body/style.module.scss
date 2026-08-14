@@ -1,0 +1,29 @@
+.body {
+  margin-top: 30px;
+
+  a {
+    color: hsl(var(--foreground));
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin: 0px;
+    display: flex;
+    overflow: hidden;
+    padding-right: 30px;
+    padding-top: 10px;
+    font-weight: 500;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .body {
+    max-width: 1200px;
+    margin-top: 80px;
+
+    p {
+      padding-right: 2vw;
+    }
+  }
+}
