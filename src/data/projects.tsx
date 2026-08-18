@@ -243,7 +243,7 @@ const projects: Project[] = [
         PROJECT_SKILLS.docker,
       ],
     },
-    live: "#",
+    live: "https://repo-lens-topaz.vercel.app",
     github: "https://github.com/rishabh98080/RepoLens",
     get content() {
       return (
