@@ -359,7 +359,7 @@ const projects: Project[] = [
   {
     id: "data-force",
     category: "Web Application",
-    title: "DataForce",
+    title: "DataForge",
     src: `${BASE_PATH}/data-force/2.png`,
     screenshots: ["2.png", "1.png"],
     skills: {
@@ -371,13 +371,13 @@ const projects: Project[] = [
         PROJECT_SKILLS.node,
       ],
     },
-    live: "#",
-    github: "https://github.com/rishabh98080/DataForce",
+    live: "https://data-forge-fix.vercel.app/",
+    github: "https://github.com/rishabh98080/DataForge",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
-            DataForce is a modern application tailored to bring efficiency and performance to your workflow.
+            DataForge is a modern application tailored to bring efficiency and performance to your workflow.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 mt-8">
