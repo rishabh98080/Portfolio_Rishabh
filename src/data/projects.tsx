@@ -228,7 +228,7 @@ const projects: Project[] = [
     id: "repolens",
     category: "Codebase Risk Intelligence Platform",
     title: "RepoLens",
-    src: `${BASE_PATH}/repolens/1.png`,
+    src: `${BASE_PATH}/repolens/3.png`,
     screenshots: ["1.png", "2.png", "3.png"],
     skills: {
       frontend: [
