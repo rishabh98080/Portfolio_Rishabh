@@ -14,31 +14,31 @@ const tabData = [
     id: "who-i-am",
     title: "Who I Am",
     icon: <Terminal className="w-5 h-5 md:w-6 md:h-6" />,
-    content: `Hi! I'm ${config.author}, a full-stack developer who thrives at the intersection of design and engineering. My journey in web development has been fueled by a continuous desire to learn, build, and ship things that matter. Whether it's crafting a pixel-perfect frontend with buttery smooth animations, or architecting a robust, scalable backend, I thrive on the challenge of bringing ambitious ideas to life.`
-  },
-  {
-    id: "philosophy",
-    title: "Philosophy",
-    icon: <Sparkles className="w-5 h-5 md:w-6 md:h-6" />,
-    content: "I believe in writing clean, maintainable code that not only works well but is a joy to read and scale. Good design is as little design as possible, and the same goes for code complexity. I prioritize user experience, performance, and accessibility in everything I build."
+    content: `Hi! I'm ${config.author}, a B.Tech student in Computer Science & IT at SOA Institute of Technical Education and Research (Class of 2028). Hailing from Jharkhand, India, I'm a passionate full-stack developer who thrives at the intersection of software engineering, data science, and AI. My journey has been fueled by a continuous desire to learn, build, and ship scalable platforms that solve real problems.`
   },
   {
     id: "tech-arsenal",
     title: "Tech Arsenal",
     icon: <Layers className="w-5 h-5 md:w-6 md:h-6" />,
-    content: "From React, Next.js, and Tailwind CSS on the frontend to Node.js, Express, and PostgreSQL on the backend, I leverage modern tech stacks to build end-to-end solutions. I'm also well-versed in Docker, AWS, and modern CI/CD pipelines to ensure smooth deployments."
+    content: "My toolbelt spans across the entire stack. On the frontend, I craft intuitive interfaces with React, Next.js, and Tailwind CSS. For the backend, I architect robust systems using Python (FastAPI), Java (Spring Boot), and Node.js. I also leverage Data Science tools like Polars, Pandas, and Scikit-learn, alongside solid DevOps practices with Docker and Linux."
   },
   {
-    id: "always-learning",
-    title: "Always Learning",
+    id: "education",
+    title: "Education",
     icon: <Rocket className="w-5 h-5 md:w-6 md:h-6" />,
-    content: "Tech evolves rapidly. I spend my time exploring new frameworks, optimizing performance, and contributing to exciting open-source projects. Right now, I'm diving deep into advanced animations and 3D web experiences to push the boundaries of frontend engineering."
+    content: "I am currently pursuing my Bachelor of Technology (2024-2028) with a current CGPA of 9.18. Beyond my core academics, I constantly push myself to upskill, earning certifications in Artificial Intelligence from IBM SkillsBuild and HP LIFE. My academic environment paired with endless curiosity helps me stay ahead of the curve."
+  },
+  {
+    id: "philosophy",
+    title: "Philosophy",
+    icon: <Sparkles className="w-5 h-5 md:w-6 md:h-6" />,
+    content: "I believe in writing clean, maintainable code that not only works well but is a joy to read and scale. Good design is as little design as possible, and the same goes for code complexity. I prioritize performance, system architecture, and building tools that developers and end-users love to interact with."
   },
   {
     id: "beyond-code",
     title: "Beyond Code",
     icon: <Coffee className="w-5 h-5 md:w-6 md:h-6" />,
-    content: "When I'm not pushing pixels or debugging servers, you'll likely find me exploring tech communities, reading sci-fi novels, brewing the perfect cup of coffee, or brainstorming my next big project. Let's connect and build something amazing together!"
+    content: "When I'm not pushing pixels or debugging servers, you'll likely find me exploring Linux system architectures, brainstorming my next big open-source utility, or brewing the perfect cup of coffee. I'm always open to connecting and discussing new ideas or potential collaborations!"
   }
 ];
 
