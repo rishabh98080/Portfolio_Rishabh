@@ -102,7 +102,7 @@ body {
 }
 
 /* canvas-confetti injects a canvas with inline z-index */
-body > canvas {
+body>canvas {
   pointer-events: none !important;
 }
 
@@ -111,6 +111,7 @@ body > canvas {
 .sp-shot {
   transition: transform 0.5s ease-out;
 }
+
 .group:hover .sp-shot {
   transform: scale(1.02);
 }
@@ -146,7 +147,7 @@ body > canvas {
    `min-w-0`/`truncate`/`break-words` below it measures against the inflated
    width and never wraps. Forcing the wrapper to `block` pins the message
    column to the viewport width so truncation/wrapping can take effect. */
-.chat-scroll-area [data-radix-scroll-area-viewport] > div {
+.chat-scroll-area [data-radix-scroll-area-viewport]>div {
   display: block !important;
 }
 
@@ -155,6 +156,7 @@ body > canvas {
 .portfolio-slider {
   --slider-ctrl: hsl(var(--foreground));
 }
+
 .portfolio-slider .splide__arrow {
   width: 2.25rem;
   height: 2.25rem;
@@ -169,29 +171,36 @@ body > canvas {
   transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     background-color 0.2s ease;
 }
+
 .portfolio-slider:hover .splide__arrow,
 .portfolio-slider:focus-within .splide__arrow {
   opacity: 1;
 }
+
 .portfolio-slider .splide__arrow:hover {
   background: hsl(var(--background) / 0.95);
   transform: scale(1.07);
 }
+
 .portfolio-slider .splide__arrow:active {
   transform: scale(0.94);
 }
+
 .portfolio-slider .splide__arrow:disabled {
   opacity: 0 !important;
   pointer-events: none;
 }
+
 .portfolio-slider .splide__arrow svg {
   width: 1rem;
   height: 1rem;
   fill: none;
 }
+
 .portfolio-slider .splide__arrow--prev {
   left: 0.75rem;
 }
+
 .portfolio-slider .splide__arrow--next {
   right: 0.75rem;
 }
@@ -202,6 +211,7 @@ body > canvas {
   padding: 0;
   gap: 0.4rem;
 }
+
 .portfolio-slider .splide__pagination__page {
   width: 0.4rem;
   height: 0.4rem;
@@ -212,9 +222,11 @@ body > canvas {
   transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
     background-color 0.25s ease;
 }
+
 .portfolio-slider .splide__pagination__page:hover {
   background: hsl(var(--muted-foreground) / 0.7);
 }
+
 .portfolio-slider .splide__pagination__page.is-active {
   width: 1.3rem;
   background: hsl(var(--foreground));
@@ -233,6 +245,7 @@ body > canvas {
    (Spline scene, particle canvas, elastic cursor) are gated separately in
    use-perf-profile.ts; this covers the long tail of decorative CSS motion. */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -240,5 +253,206 @@ body > canvas {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Android & Touch Ergonomics: Projects Section & Cards (Above Contact Form)
+   ========================================================================== */
+
+/* Android / Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  /* Section Spacing Above Contact Form */
+  #projects {
+    padding-bottom: 3.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  /* Android Card Sizing, Radius & Touch Accessibility */
+  .project-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+    min-height: 220px !important;
+    border-radius: 1rem !important; /* 16px Material 3 standard */
+    border: 1px solid hsl(var(--border) / 0.7) !important;
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4), 0 2px 6px -1px rgba(0, 0, 0, 0.25) !important;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease !important;
+  }
+
+  /* Tactile active feedback for Android touch */
+  .project-card:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.6) !important;
+    border-color: hsl(var(--primary) / 0.6) !important;
+  }
+
+  /* Deepened gradient overlay for high contrast readability on Android screens */
+  .project-card-overlay {
+    height: 7.25rem !important;
+    background: linear-gradient(
+      to top,
+      hsl(var(--background) / 0.98) 0%,
+      hsl(var(--background) / 0.85) 50%,
+      transparent 100%
+    ) !important;
+  }
+
+  .project-card-info {
+    padding: 0.875rem 1rem !important;
+  }
+
+  .project-card-title {
+    font-size: 1.125rem !important;
+    line-height: 1.35 !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .project-card-badge {
+    font-size: 0.75rem !important;
+    padding: 0.2rem 0.6rem !important;
+    border-radius: 9999px !important;
+  }
+
+  .project-card-action {
+    display: flex !important;
+    opacity: 1 !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    padding: 0.45rem !important;
+    background: hsl(var(--background) / 0.8) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid hsl(var(--border) / 0.7) !important;
+    border-radius: 9999px !important;
+  }
+
+  /* Drawer / Modal Sheet ergonomics on Android */
+  .project-drawer-content {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    max-height: 88dvh !important;
+  }
+
+  /* Sticky Drawer Header */
+  .project-drawer-header {
+    padding: 0.875rem 1rem !important;
+  }
+
+  .project-drawer-title {
+    font-size: 1.125rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .project-drawer-category {
+    font-size: 10px !important;
+    padding: 0.15rem 0.5rem !important;
+  }
+
+  .project-drawer-actions {
+    gap: 0.5rem !important;
+  }
+
+  /* Android 48dp / 44px comfortable touch targets */
+  .project-drawer-source {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 0.5rem !important;
+    font-size: 0.8125rem !important;
+  }
+
+  .project-drawer-visit {
+    min-height: 44px !important;
+    min-width: 72px !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    border-radius: 9999px !important;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Drawer Scroll & Safe Areas */
+  .project-drawer-body {
+    padding: 1.25rem 1rem max(2rem, env(safe-area-inset-bottom, 24px)) !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  /* Floating dock tech skills wrap gracefully on mobile */
+  .project-drawer-skills {
+    gap: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .project-drawer-skills .flex-col {
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+
+  .project-drawer-skills div[class*="rounded-2xl"] {
+    max-width: 100% !important;
+    flex-wrap: wrap !important;
+    height: auto !important;
+    min-height: 3.5rem !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 1rem !important;
+  }
+}
+
+/* Compact Android Viewports (<= 480px, e.g. Samsung Galaxy A series, Pixel 7/8, etc.) */
+@media (max-width: 480px) {
+  #projects {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .project-card {
+    aspect-ratio: 15 / 10 !important;
+    min-height: 205px !important;
+    border-radius: 0.875rem !important;
+  }
+
+  .project-card-title {
+    font-size: 1.05rem !important;
+  }
+
+  .project-card-info {
+    padding: 0.75rem 0.875rem !important;
+  }
+
+  .project-drawer-header {
+    padding: 0.75rem 0.875rem !important;
+  }
+
+  .project-drawer-title {
+    font-size: 1rem !important;
+    max-width: 140px !important;
+  }
+
+  .project-drawer-body {
+    padding: 1rem 0.875rem max(2rem, env(safe-area-inset-bottom, 20px)) !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Ensure markdown content and images never overflow on Android */
+  .project-drawer-body img,
+  .project-drawer-body video,
+  .project-drawer-body pre {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    border-radius: 0.5rem !important;
   }
 }

@@ -1,0 +1,30 @@
+# Job / Internship Bio-Data — Information
+
+## Personal
+
+* Full Name: Rishabh Kumar
+* Phone: 9508067578
+* Email: [rishabh24273239pandey@gmail.com](mailto:rishabh24273239pandey@gmail.com)
+* City/State: Panki,Palamu,Jharkhand,India
+* LinkedIn: https://www.linkedin.com/in/rishabh-kumar-064409330/
+* GitHub: github.com/rishabh98080
+* Portfolio: https://portfolio-rishabh-theta.vercel.app/
+* Photo:  No
+
+## Career
+
+* Target Roles:
+* Internship / Full-time / Both:
+* Preferred Location: India
+
+## Education
+
+* Degree: BTech
+* Branch: Computer Science and Information Technology
+* College: Institute of Technical Education and Research,Siksha O Anusandhan
+* Graduation Year: 2028
+* CGPA/Percentage: 9.18
+
+## Achievements
+
+* Hackathon Winner: QuantumHacks — Won hackathon on Devpost organized by Quantum Hacks (Project: DataForge, https://devpost.com/software/dataforge-eludrz)
