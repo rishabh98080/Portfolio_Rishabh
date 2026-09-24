@@ -6,9 +6,8 @@ import {
   ResponsiveDialogTrigger,
 } from "../ui/responsive-dialog";
 import { FloatingDock } from "../ui/floating-dock";
-import { ScrollArea } from "../ui/scroll-area";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
 
 import projects, { Project } from "@/data/projects";
@@ -72,31 +71,39 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
         <ResponsiveDialogContent className="project-drawer-content md:max-w-4xl md:h-[85vh] md:!flex md:flex-col md:overflow-hidden md:p-0 md:gap-0">
           {/* Sticky header */}
-          <div className="project-drawer-header shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-8 py-5">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-4 min-w-0">
-                <h4 className="project-drawer-title font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">
+          <div className="project-drawer-header shrink-0 border-b border-border bg-background/95 backdrop-blur-md px-4 py-3 md:px-8 md:py-4">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4">
+              <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                <h4 className="project-drawer-title font-display text-base sm:text-lg md:text-2xl font-bold text-foreground tracking-tight truncate">
                   {project.title}
                 </h4>
-                <span className="project-drawer-category shrink-0 text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-0.5">
+                <span className="project-drawer-category shrink-0 text-[10px] md:text-[11px] uppercase tracking-wider md:tracking-widest text-muted-foreground border border-border/80 bg-muted/40 rounded-full px-2.5 md:px-3 py-0.5">
                   {project.category}
                 </span>
               </div>
-              <div className="project-drawer-actions shrink-0 flex items-center gap-4">
+
+              <div className="project-drawer-actions flex items-center gap-2 md:gap-3 w-full md:w-auto">
                 {project.github && project.github !== "#" && (
                   <Link
                     href={project.github}
                     target="_blank"
-                    className="project-drawer-source text-xs text-muted-foreground hover:text-foreground transition-colors underline underline-offset-2"
+                    className="flex-1 md:flex-initial"
                   >
-                    Source
+                    <button className="project-drawer-source w-full md:w-auto h-9.5 md:h-8.5 px-3.5 rounded-full bg-secondary/80 hover:bg-secondary text-foreground border border-border/80 text-xs font-medium flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+                      <Github className="w-3.5 h-3.5" />
+                      <span>Source</span>
+                    </button>
                   </Link>
                 )}
                 {project.live && project.live !== "#" && (
-                  <Link href={project.live} target="_blank">
-                    <button className="project-drawer-visit group flex items-center gap-2 bg-primary text-primary-foreground text-sm font-medium px-4 py-1.5 rounded-full hover:bg-primary/80 transition-colors">
-                      Visit
-                      <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    className="flex-1 md:flex-initial"
+                  >
+                    <button className="project-drawer-visit w-full md:w-auto h-9.5 md:h-8.5 px-4 rounded-full bg-primary text-primary-foreground text-xs font-semibold flex items-center justify-center gap-1.5 shadow-sm hover:bg-primary/90 active:scale-95 transition-all">
+                      <span>Visit</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
                     </button>
                   </Link>
                 )}
@@ -105,14 +112,19 @@ const ProjectCard = ({ project }: { project: Project }) => {
           </div>
 
           {/* Scrollable content */}
-          <ScrollArea className="project-drawer-scroll flex-1" type="always" data-lenis-prevent>
-            <div className="project-drawer-body px-8 py-8">
+          <div
+            className="project-drawer-scroll flex-1 overflow-y-auto overscroll-contain"
+            data-lenis-prevent
+            data-vaul-no-drag
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
+            <div className="project-drawer-body px-4 py-5 md:px-8 md:py-8">
               {/* Tech stack */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="project-drawer-skills flex flex-col md:flex-row gap-6 md:gap-10 mb-10"
+                className="project-drawer-skills flex flex-col md:flex-row gap-6 md:gap-10 mb-8 md:mb-10"
               >
                 {project.skills.frontend?.length > 0 && (
                   <div className="flex flex-col items-center md:items-start gap-2">
@@ -133,7 +145,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               </motion.div>
 
               {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8 md:mb-10" />
 
               {/* Project content */}
               <motion.div
@@ -144,7 +156,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 {project.content}
               </motion.div>
             </div>
-          </ScrollArea>
+          </div>
 
         </ResponsiveDialogContent>
       </ResponsiveDialog>

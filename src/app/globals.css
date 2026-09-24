@@ -339,12 +339,18 @@ body>canvas {
   .project-drawer-content {
     border-top-left-radius: 20px !important;
     border-top-right-radius: 20px !important;
-    max-height: 88dvh !important;
+    max-height: 92dvh !important;
+    height: 92dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
   }
 
   /* Sticky Drawer Header */
   .project-drawer-header {
-    padding: 0.875rem 1rem !important;
+    padding: 0.75rem 1rem !important;
+    background: hsl(var(--background) / 0.95) !important;
+    backdrop-filter: blur(12px) !important;
   }
 
   .project-drawer-title {
@@ -358,35 +364,57 @@ body>canvas {
   }
 
   .project-drawer-actions {
+    display: flex !important;
     gap: 0.5rem !important;
+    width: 100% !important;
   }
 
-  /* Android 48dp / 44px comfortable touch targets */
-  .project-drawer-source {
-    min-height: 44px !important;
-    min-width: 44px !important;
+  /* Balanced, modern action buttons on Android with comfortable touch target */
+  .project-drawer-source,
+  .project-drawer-visit {
+    height: 2.375rem !important; /* 38px comfortable touch height */
+    min-height: 2.375rem !important;
+    border-radius: 9999px !important;
+    font-size: 0.8125rem !important;
+    font-weight: 600 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0 0.5rem !important;
-    font-size: 0.8125rem !important;
+    gap: 0.375rem !important;
+    padding: 0 0.875rem !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
   }
 
-  .project-drawer-visit {
-    min-height: 44px !important;
-    min-width: 72px !important;
-    padding: 0.5rem 1rem !important;
-    font-size: 0.875rem !important;
-    border-radius: 9999px !important;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
+  .project-drawer-source:active,
+  .project-drawer-visit:active {
+    transform: scale(0.96) !important;
   }
 
-  /* Drawer Scroll & Safe Areas */
+  /* Native Smooth Momentum Scrolling on Android */
+  .project-drawer-scroll {
+    flex: 1 1 0% !important;
+    min-height: 0 !important;
+    height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
+  }
+
+  .project-drawer-scroll::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .project-drawer-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 9999px;
+  }
+
+  /* Drawer Body Scroll & Safe Areas */
   .project-drawer-body {
-    padding: 1.25rem 1rem max(2rem, env(safe-area-inset-bottom, 24px)) !important;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
+    padding: 1rem 1rem max(2rem, env(safe-area-inset-bottom, 24px)) !important;
   }
 
   /* Floating dock tech skills wrap gracefully on mobile */
@@ -437,8 +465,8 @@ body>canvas {
   }
 
   .project-drawer-title {
-    font-size: 1rem !important;
-    max-width: 140px !important;
+    font-size: 1.05rem !important;
+    max-width: 100% !important;
   }
 
   .project-drawer-body {

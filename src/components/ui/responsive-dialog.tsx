@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useMediaQuery } from "@/hooks/use-media-query";
+import { cn } from "@/lib/utils";
 import {
   Dialog,
   DialogClose,
@@ -87,8 +88,14 @@ function ResponsiveDialogContent({
   }
 
   return (
-    <DrawerContent className={className}>
-      <ScrollArea className="max-h-[85vh] px-4 pb-4 overflow-y-auto!" data-lenis-prevent>{children}</ScrollArea>
+    <DrawerContent
+      className={cn(
+        "max-h-[92dvh] h-[92dvh] flex flex-col overflow-hidden p-0 gap-0",
+        className
+      )}
+      data-lenis-prevent
+    >
+      {children}
     </DrawerContent>
   );
 }
